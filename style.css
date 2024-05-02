@@ -98,7 +98,7 @@ input[type=number]::-webkit-outer-spin-button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: white;
+  color: rgba(255, 255, 255, 0);
   font-size: 48px;
   text-align: center;
 }
@@ -116,7 +116,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .enter {
-  margin: 0;
+  margin-top: 200px;
   border-radius: 10px;
   color: white;
   background-color: rgba(50, 130, 130, 0.649);
@@ -427,8 +427,49 @@ input[type=number]::-webkit-outer-spin-button {
 
 #myVideo {
   position: absolute; /* Make the video absolute positioned */
-  z-index: 1; /* Give the video a higher z-index to put it in front */
+  z-index: 1;
   width: 100%; /* Make the video full width */
   height: 100%; /* Make the video full height */
   display: none;
+}
+
+.rotating-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* adjust to your desired width */
+  height: 100%; /* adjust to your desired height */
+  z-index: -1; /* put it behind the title */
+  animation: spin 10s linear infinite; /* adjust duration and animation type to your liking */
+  transform-origin: center;
+  object-fit: none; /* add this property */
+  object-position: center; /* add this property */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#portrait {
+  height: 300px;
+  width: 550px;
+  border: solid;
+  margin-right: auto;
+  margin-left: auto;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+#kind {
+  aspect-ratio: 1;
+  width: 85vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -1,0 +1,434 @@
+@import url('https://fonts.cdnfonts.com/css/atiba');
+
+* {
+  font-family: 'Atiba', sans-serif;
+  color: white;
+}
+body {    
+  font-size: 12px;
+  background-color: hsl(249, 30%, 10%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+canvas {
+  object-fit: cover;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  color:  hsla(21, 9%, 92%,0.9);
+  font-family: 'Space Mono', monospace;
+  font-size: 1em;
+  background-color: hsla(21, 9%, 92%,0.3);
+  border: none;
+  margin: 10px;
+}
+
+
+p {
+  color: hsl(21, 9%, 92%);
+  font-family: 'Space Mono', monospace;
+  font-size: 1em;
+}
+
+#menu {
+  width: 100vw;
+  height: 20vh;
+}
+
+#mouseArea {
+  position: fixed;
+  top: 0;
+}
+
+#interface {
+  position: fixed;
+  transition: 1s ease all;
+  margin-bottom: 150px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 5em;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* The slider itself */
+.slider {
+  padding:0;
+  margin:15px;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  
+  background: hsla(21, 9%, 92%,0.3); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+
+.hello-text {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+.text {
+      border-right: 2px solid red;
+      font-size: 55px;
+      font-family: sans-serif;
+      color: rgb(255, 30, 0);
+
+}
+
+.title {
+  margin: 0;
+}
+
+.enter {
+  margin: 0;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(50, 130, 130, 0.649);
+  font-family: 'Atiba', sans-serif;
+  padding: 25px;
+}
+
+.button-text {
+  position: absolute;
+  margin: 0;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+.enter:hover{
+  cursor: pointer;
+  background-color: rgba(98, 255, 255, 0.649);
+  color: black;
+}
+
+#container{
+  max-width: 100vw;
+  overflow: hidden;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s linear;
+}
+
+#down-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px; /* adjust the margin as needed */
+}
+
+#next-section {
+  position: relative;
+  top: 100vh;
+  height: 100vh;
+}
+
+.ourwishes {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(240, 248, 255, 0.233);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#wrapper {
+  aspect-ratio: 1.618;
+  width: 90vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#wrapper > .shape {
+  height: 30%;
+  width: 30%;
+  background-color: rgba(255 255 255 / 5%);
+  position: absolute;
+  transition: left, top, height, width, border-radius;
+  transition-duration: 750ms;
+  transition-timing-function: ease-in-out;
+}
+
+#wrapper > .shape:nth-child(1) {
+  background-color: rgb(176, 190, 197);
+  z-index: 2;
+}
+
+#wrapper > .shape:nth-child(2) {
+  background-color: rgb(245, 245, 245);
+  z-index: 2;
+}
+
+#wrapper > .shape:nth-child(3) {
+  background-color: rgb(155, 93, 229);
+  z-index: 1;
+}
+
+#wrapper > .shape:nth-child(4) {
+  background-color: rgb(241, 91, 181);
+  z-index: 2;
+}
+
+#wrapper > .shape:nth-child(5) {
+  background-color: rgb(254, 228, 64);
+  z-index: 2;
+}
+
+#wrapper > .shape:nth-child(6) {
+  background-color: rgb(0, 187, 249);
+  z-index: 2;
+}
+
+#wrapper > .shape:nth-child(7) {
+  background-color: rgb(0, 245, 212);
+  z-index: 2;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(1) {  
+  left: 0%;
+  top: 0%;
+  height: 50%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(2) {  
+  left: 20%;
+  top: 0%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(3) {  
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 50%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(4) {  
+  left: 0%;
+  top: 50%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(5) {  
+  left: 30%;
+  top: 50%;
+  height: 50%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(6) {  
+  left: 70%;
+  top: 50%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"] > .shape:nth-child(7) {  
+  left: 85%;
+  top: 75%;
+  height: 25%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(1) {
+  left: 25%;
+  top: 20%;
+  height: 80%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(2) {  
+  left: 40%;
+  top: 20%;
+  height: 50%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(3) {  
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 25%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(4) {  
+  left: 0%;
+  top: 0%;
+  height: 50%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(5) {  
+  left: 10%;
+  top: 0%;
+  height: 70%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(6) {  
+  left: 75%;
+  top: 10%;
+  height: 80%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"] > .shape:nth-child(7) {  
+  left: 90%;
+  top: 40%;
+  height: 60%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(1) {
+  left: 0%;
+  top: 16.5%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(2) {  
+  left: 20%;
+  top: 2.7%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(3) {  
+  left: 38%;
+  top: 0%;
+  height: 100%;
+  width: 62%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(4) {  
+  left: 0%;
+  top: 47.3%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(5) {   
+  left: 34%;
+  top: 56.4%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(6) {  
+  left: 66%;
+  top: 45%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"] > .shape:nth-child(7) {  
+  left: 80%;
+  top: 68%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-roundness="1"] > .shape {   
+  border-radius: 6rem; 
+}
+
+#wrapper[data-roundness="2"] > .shape {  
+  border-radius: 0rem;
+}
+
+#wrapper[data-roundness="3"] > .shape {  
+  border-radius: 30rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(1) {  
+  border-bottom-left-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(2) {  
+  border-radius: 20rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(3) {  
+  border-top-right-radius: 12rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(4) {  
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(5) {  
+  border-bottom-left-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(6) {  
+  border-top-left-radius: 16rem;
+}
+
+#wrapper[data-roundness="4"] > .shape:nth-child(7) {  
+  border-top-left-radius: 10rem;
+}
+
+#myVideo {
+  position: absolute; /* Make the video absolute positioned */
+  z-index: 1; /* Give the video a higher z-index to put it in front */
+  width: 100%; /* Make the video full width */
+  height: 100%; /* Make the video full height */
+  display: none;
+}

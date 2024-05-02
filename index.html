@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <div class="hello-text">
+      <h1 class="title">SHAWN</h1>
+      <span class="ityped"></span>
+      <script src="https://unpkg.com/ityped@0.0.10"></script>
+      <script>
+            window.ityped.init(document.querySelector('.ityped'),{
+                strings: ['Dance Vice-Chair','Ankle-Breaker','Best Friend Ever'],
+                loop: true
+            })
+        </script>
+      <br>
+    </div>
+    <div class="button-text">
+      <a href="destination.html">
+        <button class="enter">Enter your world</button>
+      </a>
+    </div>
+    
+    
+
+    <div id="mouseArea" onmouseover="showInterface()" onmouseout="hideInterface()">
+      <p id="menu">MENU</p>
+      <div id="interface">
+        <input type="range" min="0" max="5" step="0.1" class="slider" value= "1" id="align">
+        <input type="range" min="0" max="5" step="0.1" class="slider" value= "1"  id="cohesion">
+        <input type="range" min="0" max="5" step="0.1" class="slider" value= "1"  id="separation">
+        <button onclick="seaDefault()">sea</button>
+        <button onclick="disco()">disco</button>
+        <button onclick="snow()">snow</button>
+        <button onclick="birds()">birds</button>
+        <button onclick="leaves()">leaves</button>
+        <button onclick="grain()">grain</button>
+        <button onclick="starryNight()">stars</button>
+        <button onclick="search()">search</button>
+        <input type="number" step="1" name="size" id="size" placeholder="size">
+      </div>
+    </div>
+    <script src="boids/quadtree.js"></script>
+    <script src="boids/boid.js"></script>
+    <script src="boids/flocks.js"></script>
+    <script src="boids/sketch.js"></script>
+    
+
+  </body>
+</html>

@@ -421,13 +421,14 @@ input[type=number]::-webkit-outer-spin-button {
   border-top-left-radius: 10rem;
 }
 
-#myVideo {
+#myVideo1, #myVideo2, #myVideo3, #myVideo4, #myVideo5, #myVideo6, #myVideo7 {
   position: absolute; /* Make the video absolute positioned */
   z-index: 1;
   width: 100%; /* Make the video full width */
   height: 100%; /* Make the video full height */
   display: none;
 }
+
 
 .rotating-background {
   position: absolute;
@@ -510,7 +511,7 @@ input[type=number]::-webkit-outer-spin-button {
   grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
   grid-gap: 10px;
   grid-auto-rows: minmax(150px, auto);
-  
+  margin-top: 150px;
 }
 .video-name {
   text-align: center;

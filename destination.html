@@ -21,6 +21,7 @@
     </div>
 
     <div id="next-section">
+        <h1 class="clickshape">Click the shapes</h1>
         <div id="wrapper" data-configuration="1" data-roundness="1">
             <div class="shape" onclick="openVideo()"></div>
             <div class="shape" onclick="openVideo()"></div>
@@ -30,15 +31,13 @@
             <div class="shape" onclick="openVideo()"></div>
             <div class="shape" onclick="openVideo()"></div>
         </div>
+        <a href="archive.html"><h1 class="archive">Head to the Archive</h1></a>
     </div>
     <video id="myVideo" width="100%" height="100%" controls>
         <source src="videos/rae.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div id="next-section">
-        
-    </div>
 
 
     <div id="mouseArea" onmouseover="showInterface()" onmouseout="hideInterface()">
@@ -105,6 +104,14 @@
         
         prev = index;
         }, 3000);
+        // Add a click event listener to each shape
+        document.querySelectorAll('.shape').forEach(shape => {
+          shape.addEventListener('click', () => {
+            // Add the 'dimmed' class to the shape
+            shape.classList.add('dimmed');
+
+          });
+        });
         function openVideo() {
             // Get the video element
             var video = document.getElementById("myVideo");

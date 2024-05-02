@@ -35,11 +35,7 @@ button, input {
 }
 
 
-p {
-  color: hsl(21, 9%, 92%);
-  font-family: 'Space Mono', monospace;
-  font-size: 1em;
-}
+
 
 #menu {
   width: 100vw;
@@ -470,6 +466,60 @@ input[type=number]::-webkit-outer-spin-button {
   width: 85vmin;
   position: absolute;
   top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.archive {
+  position: absolute;
+  margin: 0;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(240, 248, 255, 0.233);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.clickshape {
+  position: absolute;
+  margin: 0;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shape.dimmed {
+  opacity: 0.2;
+}
+
+#video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(150px, auto);
+  
+}
+.video-name {
+  text-align: center;
+  font-size: 32px;
+}
+#video-grid li {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

@@ -1,7 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/atiba');
+@import url('https://fonts.cdnfonts.com/css/matolica');
 
 * {
-  font-family: 'Atiba', sans-serif;
+  font-family: 'Matolica', sans-serif;
   color: white;
 }
 body {    
@@ -115,8 +115,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 200px;
   border-radius: 10px;
   color: white;
-  background-color: rgba(50, 130, 130, 0.649);
-  font-family: 'Atiba', sans-serif;
+  background-color: rgba(245, 170, 94, 0.649);
+  font-family: 'Matolica', sans-serif;
   padding: 25px;
 }
 
@@ -134,7 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .enter:hover{
   cursor: pointer;
-  background-color: rgba(98, 255, 255, 0.649);
+  background-color: rgba(255, 0, 0, 0.649);
   color: black;
 }
 
@@ -508,7 +508,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   grid-gap: 10px;
   grid-auto-rows: minmax(150px, auto);
   margin-top: 150px;

@@ -1,22 +1,24 @@
 
 function seaDefault() {	
-	perceptionRadius = 100;
-	trail = 0.45;
-	sliders[0].value(1);
-	sliders[1].value(1);
-	sliders[2].value(1);
-	resizeFlock();
+	perceptionRadius = 50;
+	trail = 0.7;
 
+	sliders[0].value(0.2);
+	sliders[1].value(0);
+	sliders[2].value(0.6);
+	resizeFlock();
 	for (let boid of flock) {
-		boid.maxForce = 0.2;
-		boid.maxSpeed = 6;
-		boid.hue = random(150, 240);
-		boid.saturation = random(50, 100);
-		boid.brightness = random(30, 100);
+		boid.hue = random(60);
+		boid.saturation = random(50,100);
+		boid.brightness = random(10,70);
+		boid.maxForce = 0.1;
+		boid.maxSpeed = 2;
 	}
 
     swirling = false;
-    wind = false;
+    wind = true;
+    windForce = 0.1;
+    windDetail = 400;
 }
 
 function disco() {

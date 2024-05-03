@@ -24,16 +24,16 @@
       }
     </style>
       <div id="kind">
-        <img src="shawn.png" class="rotating-background" />
+        <img src="esther.png" class="rotating-background" />
       </div>
     <div class="hello-text">
-      <h1 class="title">SHAWN</h1>
+      <h1 class="title">ESTHER</h1>
       <span class="ityped"></span>
 
       <script src="https://unpkg.com/ityped@0.0.10"></script>
       <script>
             window.ityped.init(document.querySelector('.ityped'),{
-                strings: ['Dance Vice-Chair','Ankle-Breaker','Best Friend Ever'],
+                strings: ['Energetic','Hyper','Good-willed'],
                 loop: true
             })
         </script>
@@ -48,7 +48,7 @@
     
 
     <div id="mouseArea" onmouseover="showInterface()" onmouseout="hideInterface()">
-
+      <p id="menu">MENU</p>
       <div id="interface">
         <input type="range" min="0" max="5" step="0.1" class="slider" value= "1" id="align">
         <input type="range" min="0" max="5" step="0.1" class="slider" value= "1"  id="cohesion">
@@ -64,10 +64,10 @@
         <input type="number" step="1" name="size" id="size" placeholder="size">
       </div>
     </div>
-    <script src="boids/quadtree.js"></script>
-    <script src="boids/boid.js"></script>
-    <script src="boids/flocks.js"></script>
-    <script src="boids/sketch.js"></script>
+    <script src="boids/quadtree.js"defer></script>
+    <script src="boids/boid.js"defer></script>
+    <script src="boids/flocks.js"defer></script>
+    <script src="boids/sketch.js"defer></script>
     
 
   </body>

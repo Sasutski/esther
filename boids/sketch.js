@@ -12,23 +12,26 @@
 
 let flock = [];
 let boundary;
-let perceptionRadius = 100;
+
+
+
+let perceptionRadius = 50;
 // trail sets the opacity of the background in each draw loop. 
 // values between 0-1. closer to 0 gives a longer trail to each particle. 
-let trail = 0.45;
+let trail = 0.7;
 //interface
 let sliders;
 let flockSize = 200;
 let cap = flockSize/50;
 // extra effects
-let swirling, wind = false;
+let swirling = false;
+let wind = true;
 let swirls = [];
 let sTotal;
-let windForce, windDetail;
+let windForce = 0.1; 
+let windDetail = 400;
 let xOff = 0;
 let yOff = 0;
-
-
 
 function setup() {
   colorMode(HSB,360,100,100,1);
